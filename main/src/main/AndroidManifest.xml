@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2012-2016 Arne Schwabe
   ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="de.blinkt.openvpn">
@@ -37,7 +34,6 @@
             android:name=".activities.VPNPreferences"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".activities.DisconnectVPN"
             android:autoRemoveFromRecents="true"
@@ -45,7 +41,6 @@
             android:noHistory="true"
             android:taskAffinity=".DisconnectVPN"
             android:theme="@style/blinkt.dialog" />
-
         <activity
             android:name=".activities.LogWindow"
             android:allowTaskReparenting="true"
@@ -71,11 +66,9 @@
                 <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
-
         <service
             android:name=".api.ExternalOpenVPNService"
             tools:ignore="ExportedService">
-
             <intent-filter>
                 <action android:name="de.blinkt.openvpn.api.IOpenVPNAPIService" />
             </intent-filter>
@@ -96,14 +89,13 @@
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-
             </intent-filter>
         </receiver>
 
         <activity
             android:name=".activities.ConfigConverter"
-            android:label="Convert Config File"
             android:excludeFromRecents="true"
+            android:label="Convert Config File"
             android:taskAffinity=".ConfigConverter"
             android:uiOptions="splitActionBarWhenNarrow"
             tools:ignore="ExportedActivity">
@@ -145,8 +137,8 @@
             android:name=".LaunchVPN"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
-            android:noHistory="true"
             android:label="@string/vpn_launch_title"
+            android:noHistory="true"
             android:taskAffinity=".LaunchVPN"
             android:theme="@style/blinkt.dialog"
             tools:ignore="ExportedActivity">
@@ -156,8 +148,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".activities.CreateShortcuts"
             android:excludeFromRecents="true"
@@ -166,6 +156,7 @@
             android:theme="@android:style/Theme.DeviceDefault.Light.DialogWhenLarge">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -184,6 +175,13 @@
             </intent-filter>
         </receiver>
         -->
+        <activity android:name="com.usagis2.ezvpngate.activities.DashBoard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
